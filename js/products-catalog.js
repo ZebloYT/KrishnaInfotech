@@ -3077,6 +3077,15 @@ const PRODUCTS_DATA = [
           btn.click();
         }
       });
+      const chips = document.querySelectorAll('.fast-search-chip');
+      chips.forEach(chip => {
+        const onc = chip.getAttribute('onclick') || '';
+        if (onc.includes(`filterByCat('${category}')`)) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
       const bar = document.getElementById('catalog-controls-bar');
       if (bar) bar.scrollIntoView({ behavior: 'smooth' });
     };
@@ -3187,6 +3196,12 @@ const PRODUCTS_DATA = [
           else btn.classList.remove('active');
         }
       }
+
+      const infPills = document.querySelectorAll('.infinity-pill-item');
+      infPills.forEach((pill, pIdx) => {
+        if (pIdx === idx) pill.classList.add('active');
+        else pill.classList.remove('active');
+      });
 
       const inspectBtn = document.getElementById('spotlight-inspect-btn');
       if (inspectBtn) {
@@ -3305,6 +3320,15 @@ const PRODUCTS_DATA = [
         searchInput.value = query;
         searchInput.dispatchEvent(new Event('input'));
       }
+      const chips = document.querySelectorAll('.fast-search-chip');
+      chips.forEach(chip => {
+        const onc = chip.getAttribute('onclick') || '';
+        if (onc.includes(`filterBySearch('${query}')`)) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
     };
 
     function loadSavedCustomerInfo() {

@@ -164,9 +164,9 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
           <span>Custom PC Studio</span>
         </a>
-        <a href="#popular-cats-section" class="md-subnav-link">
+        <a href="#choose-gear-section" class="md-subnav-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          <span>Popular Categories</span>
+          <span>Choose Your Gear</span>
         </a>
         <a href="#catalog-controls-bar" onclick="filterByCat('refurbished'); scrollToCatalog();" class="md-subnav-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
@@ -210,11 +210,17 @@
   </aside>
 
   <!-- =========================================================================
-       DRIBBLLE MASTERCLASS HERO: 3D SPOTLIGHT SHOWCASE & EDITORIAL ARCHITECTURE
+       GIGABYTE INFINITY HERO: CINEMATIC HARDWARE STAGE & EDITORIAL ARCHITECTURE
        (Hardware Catalog & Bespoke Systems Studio)
        ========================================================================= -->
   <section class="dribbble-hero-section" id="catalog-hero">
     <div class="container">
+      <!-- Flagship Infinity Brand Header (Gigabyte Frame 08) -->
+      <div class="infinity-brand-banner">
+        <span class="infinity-title">I N F I N I T Y</span>
+        <span class="infinity-sub">FLAGSHIP BESPOKE PC STUDIO &bull; GEFORCE RTX 5080 / 5090 WORKSTATIONS &bull; DISTRIBUTOR DIRECT</span>
+      </div>
+
       <div class="dribbble-hero-grid">
         <!-- Left Column: Hardware Overview & Quick Actions -->
         <div class="dribbble-hero-content">
@@ -356,12 +362,199 @@
           </div>
         </div>
       </div>
+
+      <!-- Edge-to-Edge Category Progress Bar (Gigabyte Frame 03) -->
+      <div class="infinity-pills-bar">
+        <div class="infinity-pill-item active" onclick="switchSpotlightModel(0)">
+          <div class="infinity-pill-progress"></div>
+          <span class="infinity-pill-kicker">Flagship Systems</span>
+          <strong class="infinity-pill-name">GamerX &amp; Extreme RTX 50-Series Rigs</strong>
+        </div>
+        <div class="infinity-pill-item" onclick="switchSpotlightModel(1)">
+          <div class="infinity-pill-progress"></div>
+          <span class="infinity-pill-kicker">Enterprise Solutions</span>
+          <strong class="infinity-pill-name">AI &amp; 3D Workstation Compute</strong>
+        </div>
+        <div class="infinity-pill-item" onclick="switchSpotlightModel(2)">
+          <div class="infinity-pill-progress"></div>
+          <span class="infinity-pill-kicker">Commercial Security</span>
+          <strong class="infinity-pill-name">4K ColorVu CCTV &amp; AI NVR Packages</strong>
+        </div>
+        <div class="infinity-pill-item" onclick="switchViewMode('builder')">
+          <div class="infinity-pill-progress"></div>
+          <span class="infinity-pill-kicker">Bespoke Studio</span>
+          <strong class="infinity-pill-name">10-Slot Custom PC Configurator</strong>
+        </div>
+      </div>
     </div>
   </section>
 
   <div id="catalog-view-wrapper">
+    <!-- =========================================================================
+         CHOOSE YOUR GEAR: EDGE-TO-EDGE 8-CATEGORY SELECTOR (GIGABYTE STYLE)
+         ========================================================================= -->
+    <section id="choose-gear-section" class="choose-gear-section">
+      <div class="container">
+        <div class="choose-gear-header">
+          <span class="choose-gear-kicker">PRODUCTS</span>
+          <h2 class="choose-gear-title">Choose Your Gear</h2>
+        </div>
+
+        <div class="choose-gear-grid">
+          <!-- 1. Motherboards -->
+          <div class="choose-gear-card" onclick="filterBySearch('Motherboard'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/components/motherboard.jpg" alt="Motherboards & Chipsets" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Motherboards</h4>
+              <span class="gear-card-sub">Intel Z790 • AMD X870 &amp; B650</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 2. Graphics Cards -->
+          <div class="choose-gear-card" onclick="filterBySearch('NVIDIA'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/components/rtx-5090.jpg" alt="Graphics Cards & GPUs" onerror="this.src='assets/components/gpu.jpg'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Graphics Cards</h4>
+              <span class="gear-card-sub">RTX 5090 / 5080 / 40-Series</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 3. Processors (CPUs) -->
+          <div class="choose-gear-card" onclick="filterBySearch('Ryzen'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/components/cpu.jpg" alt="Processors & CPUs" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Processors</h4>
+              <span class="gear-card-sub">AMD Ryzen 9 &amp; Intel Core i9</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 4. Pre-Built Desktop PCs -->
+          <div class="choose-gear-card active" onclick="filterByCat('pcs'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/md/prebuilt_gamerx.png" alt="Pre-Built Desktop PCs" onerror="this.src='assets/products/pc-1.jpg'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Desktop PCs</h4>
+              <span class="gear-card-sub">Commercial &amp; Esports Ready</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 5. Custom PC Studio -->
+          <div class="choose-gear-card" onclick="switchViewMode('builder')">
+            <div class="gear-card-img-wrap">
+              <img src="assets/components/chassis.jpg" alt="Custom PC Studio" onerror="this.src='assets/products/pc-3.jpg'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Custom PC Studio</h4>
+              <span class="gear-card-sub">Bespoke 10-Component Configurator</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 6. Gaming Displays -->
+          <div class="choose-gear-card" onclick="filterBySearch('Monitor'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/components/monitor.jpg" alt="Monitors & Displays" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Gaming Monitors</h4>
+              <span class="gear-card-sub">OLED &amp; 144Hz/240Hz Fast IPS</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 7. High-Speed Storage & RAM -->
+          <div class="choose-gear-card" onclick="filterBySearch('SSD'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/components/ssd.jpg" alt="High-Speed Storage & Memory" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">Storage &amp; RAM</h4>
+              <span class="gear-card-sub">Gen5 NVMe &amp; 6000MHz DDR5</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+
+          <!-- 8. Commercial CCTV -->
+          <div class="choose-gear-card" onclick="filterByCat('cctv'); scrollToCatalog();">
+            <div class="gear-card-img-wrap">
+              <img src="assets/products/cctv-1.jpg" alt="4K CCTV Surveillance" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="gear-card-body">
+              <h4 class="gear-card-name">CCTV &amp; Security</h4>
+              <span class="gear-card-sub">Hikvision ColorVu &amp; 8CH NVRs</span>
+            </div>
+            <div class="gear-card-indicator"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         EXPLORE YOUR SYSTEMS: 3 HERO TILES (GIGABYTE FRAME 13)
+         ========================================================================= -->
+    <section id="systems-feature-section" class="systems-feature-section">
+      <div class="container">
+        <div class="systems-feature-header">
+          <span class="choose-gear-kicker">DEPLOYMENT READY</span>
+          <h2 class="choose-gear-title">Explore High-Performance Systems</h2>
+        </div>
+
+        <div class="systems-feature-grid">
+          <!-- Tile 1: Certified Refurbished Laptops -->
+          <div class="system-feature-tile" onclick="filterByCat('refurbished'); scrollToCatalog();">
+            <div class="system-feature-img-wrap">
+              <img src="assets/products/refurb-1.jpg" alt="Enterprise Business Laptops" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="system-feature-info">
+              <span class="system-badge">GRADE-A TESTED</span>
+              <h3>Enterprise Business Laptops</h3>
+              <p>Dell Latitude &amp; Lenovo ThinkPad business notebooks with 6-month Krishna Infotech warranty &amp; Windows 11 Pro.</p>
+              <span class="system-cta-link">Explore Laptops →</span>
+            </div>
+          </div>
+
+          <!-- Tile 2: AI Workstations & Deep Learning -->
+          <div class="system-feature-tile" onclick="filterBySearch('DGX'); scrollToCatalog();">
+            <div class="system-feature-img-wrap">
+              <img src="assets/md/hot_nvidia_dgx.png" alt="AI Workstations & Servers" onerror="this.src='assets/components/rtx-5090.jpg'">
+            </div>
+            <div class="system-feature-info">
+              <span class="system-badge accent-badge">COMPUTE CLUSTER</span>
+              <h3>AI TOP &amp; Enterprise Compute</h3>
+              <p>NVIDIA DGX Station, Dual RTX 5090 workstations, and ECC memory racks engineered for high-throughput LLM workloads.</p>
+              <span class="system-cta-link">View Compute Rigs →</span>
+            </div>
+          </div>
+
+          <!-- Tile 3: Custom Esports Gaming PCs -->
+          <div class="system-feature-tile" onclick="switchViewMode('builder')">
+            <div class="system-feature-img-wrap">
+              <img src="assets/md/prebuilt_gamerx.png" alt="Custom Gaming Desktops" onerror="this.src='assets/products/pc-1.jpg'">
+            </div>
+            <div class="system-feature-info">
+              <span class="system-badge">BESPOKE RIGS</span>
+              <h3>Custom Gaming &amp; 3D Desktops</h3>
+              <p>Liquid-cooled custom gaming PCs engineered for 4K ray tracing, zero throttling, and clean cable management.</p>
+              <span class="system-cta-link">Open Rig Studio →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 1. Pre-Built Commercial & Gaming PCs Section -->
-    <section id="prebuilt-section" class="md-section-row" style="padding-top: 24px; padding-bottom: 40px;">
+    <section id="prebuilt-section" class="md-section-row" style="padding-top: 36px; padding-bottom: 40px;">
       <div class="container">
         <div class="md-section-header">
           <div class="md-section-title-wrap">
@@ -403,95 +596,32 @@
       </div>
     </section>
 
-    <!-- 3. Popular Hardware Categories Quick-Filter Grid -->
-    <section id="popular-cats-section" class="md-section-row" style="padding-top: 16px; padding-bottom: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+    <!-- 3. Find Your Product Fast: Search Bar & Fast Chips (Gigabyte Frame 13) -->
+    <section id="catalog-controls-bar" class="section-pad catalog-controls-section" style="padding-top: 8px; padding-bottom: 24px;">
       <div class="container">
-        <div class="md-section-header">
-          <div class="md-section-title-wrap">
-            <span class="md-section-kicker">EXPLORE BY CATEGORY</span>
-            <h2 class="md-section-heading">Popular Hardware Categories</h2>
-            <p class="md-section-sub">Quickly navigate commercial workstations, CCTV security packages, memory, or certified refurbished systems.</p>
+        <div class="fast-search-wrapper">
+          <div class="fast-search-box">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" id="catalog-search" class="catalog-search-input" placeholder="Enter model name, chipset, or feature keywords (e.g. RTX 5090, Ryzen 7, DDR5, 4K ColorVu, ThinkPad)...">
+          </div>
+
+          <div class="fast-search-chips">
+            <span class="fast-chips-label">Quick Filters:</span>
+            <button type="button" class="fast-search-chip active" onclick="filterByCat('all')">All Products (33)</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('5090')">RTX 5090</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('4060')">RTX 4060</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('Ryzen')">Ryzen 7 5800X3D</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('Core i7')">Intel Core i7</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('DDR5')">DDR5 64GB</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('Gen5')">Gen5 NVMe SSD</button>
+            <button type="button" class="fast-search-chip" onclick="filterBySearch('OLED')">LG OLED Monitor</button>
+            <button type="button" class="fast-search-chip" onclick="filterByCat('cctv')">4K ColorVu CCTV</button>
+            <button type="button" class="fast-search-chip" onclick="filterByCat('refurbished')">ThinkPad Laptops</button>
+            <button type="button" class="fast-search-chip" onclick="filterByCat('software')">KrishnaERP Software</button>
           </div>
         </div>
 
-        <div class="popular-cats-grid">
-          <div class="popular-cat-card" onclick="filterByCat('pcs'); scrollToCatalog();">
-            <div class="pop-cat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div class="pop-cat-info">
-              <h4>Workstations &amp; PCs</h4>
-              <p>Intel Core i7/i9, AMD Ryzen 7000/9000, Custom Rigs</p>
-            </div>
-            <span class="pop-cat-arrow">→</span>
-          </div>
-
-          <div class="popular-cat-card" onclick="filterByCat('cctv'); scrollToCatalog();">
-            <div class="pop-cat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            </div>
-            <div class="pop-cat-info">
-              <h4>4K CCTV &amp; Security</h4>
-              <p>Hikvision ColorVu, CP Plus AI, Dahua 8-Channel NVRs</p>
-            </div>
-            <span class="pop-cat-arrow">→</span>
-          </div>
-
-          <div class="popular-cat-card" onclick="filterByCat('refurbished'); scrollToCatalog();">
-            <div class="pop-cat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-            </div>
-            <div class="pop-cat-info">
-              <h4>Certified Refurbished</h4>
-              <p>Dell Latitude, Lenovo ThinkPad, HP EliteBook, Grade-A</p>
-            </div>
-            <span class="pop-cat-arrow">→</span>
-          </div>
-
-          <div class="popular-cat-card" onclick="switchViewMode('builder')">
-            <div class="pop-cat-icon" style="color: #a78bfa;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
-            </div>
-            <div class="pop-cat-info">
-              <h4>Custom PC Rig Studio</h4>
-              <p>Configure mouse pad to RTX 5090 with live power meter</p>
-            </div>
-            <span class="pop-cat-arrow">→</span>
-          </div>
-
-          <div class="popular-cat-card" onclick="filterBySearch('NVIDIA'); scrollToCatalog();">
-            <div class="pop-cat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/></svg>
-            </div>
-            <div class="pop-cat-info">
-              <h4>Graphics &amp; Compute</h4>
-              <p>GeForce RTX 5090 / 4080 / 4060, DGX Deep Learning</p>
-            </div>
-            <span class="pop-cat-arrow">→</span>
-          </div>
-
-          <div class="popular-cat-card" onclick="filterByCat('software'); scrollToCatalog();">
-            <div class="pop-cat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <div class="pop-cat-info">
-              <h4>GST ERP Software</h4>
-              <p>In-House Billing, Barcode Retail POS, Multi-Branch ERP</p>
-            </div>
-            <span class="pop-cat-arrow">→</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="catalog-controls-bar" class="section-pad catalog-controls-section" style="padding-top: 0; padding-bottom: 24px;">
-      <div class="container">
-        <!-- Search & Real-time Filter Bar -->
-        <div class="catalog-controls">
-          <div class="search-input-wrapper">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="text" id="catalog-search" class="catalog-search-input" placeholder="Search by model, brand, hardware (e.g. Dell, ThinkPad, 4K ColorVu, RTX, Dahua)...">
-          </div>
-
+        <div class="catalog-controls" style="display: none;">
           <div class="filter-pills-row">
             <div class="filter-btn-group" id="filter-btn-group">
               <button class="cat-filter-btn active" data-filter="all">
@@ -509,15 +639,17 @@
               <button class="cat-filter-btn" data-filter="software">
                 In-House Software <span class="filter-count-badge" id="count-soft">3</span>
               </button>
-              <button class="cat-filter-btn" style="border-color: var(--border-medium); color: var(--text-primary);" onclick="switchViewMode('builder')">
-                Custom PC Studio →
-              </button>
-            </div>
-
-            <div class="results-meta">
-              Showing <strong id="visible-count" style="color: #ffffff;">33</strong> of 33 Verified Products
             </div>
           </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 4px 16px;">
+          <div class="results-meta" style="font-size: 13.5px; color: var(--text-secondary);">
+            Showing <strong id="visible-count" style="color: #ffffff;">33</strong> of 33 Verified Hardware Products
+          </div>
+          <button onclick="switchViewMode('builder')" class="btn-builder-shortcut" style="padding: 6px 14px; font-size: 12px;">
+            <span>Custom PC Studio (RTX 5090) →</span>
+          </button>
         </div>
       </div>
     </section>
@@ -1076,61 +1208,118 @@
     </div>
   </div>
 
-  <!-- Site Footer (5 Quick Pages) -->
+  <!-- Site Footer: Edge-to-Edge Gigabyte Masterclass Mega Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-            <img src="assets/logo.png" alt="Krishna Infotech Logo" style="height: 44px; width: auto;">
-          </div>
-          <p class="footer-brand-desc">
-            Complete IT hardware, CCTV surveillance, biometric access, structured networking &amp; proprietary ERP software across Mumbai, Thane, Navi Mumbai &amp; Nashik.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-ink); margin-top: 12px;">
-            GSTIN: 27AOAPM2539L1ZR
+      <!-- Top Strip: Follow Us & Operational Status (Gigabyte Frame 20) -->
+      <div class="footer-top-strip">
+        <div class="footer-social-wrap">
+          <span class="footer-social-title">Connect With Us</span>
+          <div class="footer-social-icons">
+            <a href="https://wa.me/919819557374" target="_blank" class="footer-social-link" title="Official WhatsApp (+91 9819557374)" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            </a>
+            <a href="mailto:vikrant2005@gmail.com" class="footer-social-link" title="Direct Email (vikrant2005@gmail.com)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="tel:+919819557374" class="footer-social-link" title="Call Desk (+91 9819557374)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="contact.html#kdesk-info" class="footer-social-link" title="KDesk Remote Desktop Support">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </a>
           </div>
         </div>
 
+        <div class="footer-status-pill">
+          <span class="live-dot-pulse"></span>
+          <span>Regional Hub: Maharashtra, India &bull; GST Registered &bull; Real-Time Inventory Online</span>
+        </div>
+      </div>
+
+      <!-- 5-Column Mega Grid (Gigabyte Frame 20) -->
+      <div class="footer-mega-grid">
+        <!-- Col 1: Company Profile -->
         <div>
-          <h4 class="footer-col-title">Quick Links</h4>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <img src="assets/logo.png" alt="Krishna Infotech Logo" style="height: 44px; width: auto;">
+          </div>
+          <p class="footer-brand-desc" style="margin-top: 0; margin-bottom: 12px;">
+            Commercial IT infrastructure, custom liquid-cooled PC engineering, 4K CCTV surveillance &amp; in-house enterprise ERP systems.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 11.5px; color: #38bdf8; margin-bottom: 4px;">
+            GSTIN: 27AOAPM2539L1ZR
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted);">
+            Proprietor: Vikrant Madane
+          </div>
+        </div>
+
+        <!-- Col 2: Consumer & Hardware -->
+        <div>
+          <h4 class="footer-col-title">Consumer &amp; Hardware</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Hardware &amp; Products</a></li>
-            <li><a href="contact.html">About &amp; Contact</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="#prebuilt-section">Pre-Built Gaming PCs</a></li>
+            <li><a href="javascript:void(0)" onclick="filterBySearch('NVIDIA'); scrollToCatalog();">RTX 5090 &amp; 40-Series</a></li>
+            <li><a href="javascript:void(0)" onclick="filterBySearch('Ryzen'); scrollToCatalog();">AMD Ryzen Processors</a></li>
+            <li><a href="javascript:void(0)" onclick="filterBySearch('Monitor'); scrollToCatalog();">Gaming Monitors</a></li>
+            <li><a href="javascript:void(0)" onclick="filterBySearch('SSD'); scrollToCatalog();">High-Speed NVMe Storage</a></li>
+            <li><a href="javascript:void(0)" onclick="switchViewMode('builder')">Custom PC Rig Studio</a></li>
           </ul>
         </div>
 
+        <!-- Col 3: Enterprise & Security -->
         <div>
-          <h4 class="footer-col-title">In-House Portals</h4>
+          <h4 class="footer-col-title">Enterprise &amp; Security</h4>
           <ul class="footer-links">
-            <li><a href="https://krishanerp.online/" target="_blank" rel="noopener">KrishnaERP.online ↗</a></li>
-            <li><a href="https://amskrishna.online/" target="_blank" rel="noopener">AMSKRISHNA.online ↗</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('cctv'); scrollToCatalog();">4K ColorVu CCTV Packages</a></li>
+            <li><a href="javascript:void(0)" onclick="filterBySearch('NVR'); scrollToCatalog();">Hikvision &amp; CP Plus NVRs</a></li>
+            <li><a href="index.html#services">Biometric Attendance</a></li>
+            <li><a href="index.html#services">Structured Network Cabling</a></li>
+            <li><a href="contact.html">Corporate AMC Contracts</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('refurbished'); scrollToCatalog();">Refurbished Business Laptops</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Proprietary Software -->
+        <div>
+          <h4 class="footer-col-title">Software &amp; Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://krishanerp.online/" target="_blank" rel="noopener">KrishnaERP.online Cloud ↗</a></li>
+            <li><a href="https://amskrishna.online/" target="_blank" rel="noopener">AMSKRISHNA.online Portal ↗</a></li>
             <li><a href="contact.html#kdesk-info">KDesk Remote Support</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('software'); scrollToCatalog();">Barcode POS Billing System</a></li>
             <li><a href="contact.html">Schedule Platform Demo</a></li>
           </ul>
         </div>
 
+        <!-- Col 5: Registered Office & Support -->
         <div>
-          <h4 class="footer-col-title">Registered Office</h4>
+          <h4 class="footer-col-title">Registered Office &amp; Support</h4>
           <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px;">
             B 004 Ground Floor, Krishnadeep Co. Op. Housing Society, Badlapur East, Thane 421503, Maharashtra, India
           </p>
           <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 4px;">
             <strong>Phone / WhatsApp:</strong> <a href="tel:+919819557374" style="color: #fff; text-decoration: none;">+91 9819557374</a>
           </p>
-          <p style="font-size: 13px; color: var(--text-secondary);">
-            <strong>Email:</strong> <a href="mailto:vikrant2005@gmail.com" style="color: var(--accent-ink); text-decoration: none;">vikrant2005@gmail.com</a>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">
+            <strong>Email:</strong> <a href="mailto:vikrant2005@gmail.com" style="color: #38bdf8; text-decoration: none;">vikrant2005@gmail.com</a>
           </p>
+          <div style="margin-top: 10px;">
+            <button onclick="openModal('complaint-modal')" class="btn-builder-shortcut" style="padding: 6px 12px; font-size: 11.5px; width: 100%; justify-content: center;">
+              <span>Direct Support &amp; Grievances</span>
+            </button>
+          </div>
         </div>
       </div>
 
+      <!-- Footer Bottom Legal Strip -->
       <div class="footer-bottom">
-        <div>© 2026 Krishna Infotech. All rights reserved. Proprietor: Vikrant Madane • GSTIN: 27AOAPM2539L1ZR</div>
+        <div>&copy; 2026 Krishna Infotech. All rights reserved. Proprietor: Vikrant Madane &bull; GSTIN: 27AOAPM2539L1ZR</div>
         <div>
           <a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none; margin-left: 16px;">Privacy Policy</a>
-          <a href="#complaints" onclick="openModal('complaint-modal'); return false;" style="color: var(--accent-ink); text-decoration: none; margin-left: 16px;">Support &amp; Complaints</a>
+          <a href="javascript:void(0)" onclick="openModal('complaint-modal')" style="color: #38bdf8; text-decoration: none; margin-left: 16px;">Priority Support</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none; margin-left: 16px;">Contact Us</a>
         </div>
       </div>
     </div>
