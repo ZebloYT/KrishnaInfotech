@@ -553,6 +553,82 @@
             box-shadow: 0 12px 30px -6px rgba(234, 67, 53, 0.5);
         }
 
+        .btn-call {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 24px -6px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-call:hover {
+            background: #0274b3;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -6px rgba(2, 132, 199, 0.5);
+        }
+
+        /* Cash Payment Styling */
+        .cash-hero-box {
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 229, 163, 0.08) 0%, rgba(0, 210, 255, 0.04) 100%);
+            border: 1px solid rgba(0, 229, 163, 0.25);
+            border-radius: var(--radius-md);
+            padding: 24px 20px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .cash-icon-frame {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(0, 229, 163, 0.15);
+            border: 2px solid rgba(0, 229, 163, 0.35);
+            box-shadow: 0 0 24px rgba(0, 229, 163, 0.2);
+            margin-bottom: 14px;
+        }
+
+        .cash-handover-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 14px;
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            .cash-handover-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cash-step-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+        }
+
+        .cash-step-item .cs-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent-emerald);
+            color: #000000;
+            font-weight: 800;
+            font-size: 0.72rem;
+            flex-shrink: 0;
+        }
+
         /* Step 2 Panel Styling */
         .code-input-form {
             display: flex;
@@ -858,7 +934,7 @@
             <h2>Unlock &amp; Download Full Website Package</h2>
             <p>
                 The complete custom web platform for <strong>Krishna Infotech</strong> has been fully built, optimized, and packaged.
-                Complete payment confirmation below to unlock the direct production download archive.
+                Arrange cash payment handover below with Vikrant (+91 9819557374) to receive your unlock code and download the production archive.
             </p>
         </section>
 
@@ -889,68 +965,99 @@
         <!-- Gateway 2-Column Grid -->
         <section class="gateway-grid">
 
-            <!-- Step 1: Payment & Proof -->
+            <!-- Step 1: Cash Payment & Code Handover -->
             <div class="step-panel">
                 <div class="step-header">
                     <div class="step-title-wrap">
                         <span class="step-number">1</span>
-                        <h3>Payment Details</h3>
+                        <h3>Payment: Cash Handover</h3>
                     </div>
-                    <span class="step-tag">Step 1 of 2</span>
+                    <span class="step-tag" style="background: rgba(0, 229, 163, 0.12); color: var(--accent-emerald); border-color: rgba(0, 229, 163, 0.3);">Cash Preferred</span>
                 </div>
 
-                <div class="qr-display-box">
-                    <div class="qr-image-frame">
-                        <img src="assets/upi-qr-code.svg" alt="Scan to Pay via UPI" onerror="this.onerror=null; this.src='assets/upi-qr-code.png';">
+                <div class="cash-hero-box">
+                    <div class="cash-icon-frame">
+                        <span style="font-size: 2.8rem;">💵</span>
                     </div>
-                    <div class="qr-caption">
-                        Scan with <strong>GPay, PhonePe, Paytm, BHIM</strong>, or any UPI app
+                    <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">
+                        Direct Cash in Hand Settlement
+                    </h4>
+                    <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; max-width: 480px; margin: 0 auto 16px auto;">
+                        Payment for this production source code package is accepted via <strong>Direct Cash Handover</strong> across Mumbai, Thane, Navi Mumbai, and Nashik. Hand over the payment in person to receive your instant Unlock Code.
+                    </p>
+                    <div class="cash-handover-steps">
+                        <div class="cash-step-item">
+                            <span class="cs-num">1</span>
+                            <span>Schedule handover with Vikrant</span>
+                        </div>
+                        <div class="cash-step-item">
+                            <span class="cs-num">2</span>
+                            <span>Hand over cash payment</span>
+                        </div>
+                        <div class="cash-step-item">
+                            <span class="cs-num">3</span>
+                            <span>Get instant unlock code</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="payment-meta-list">
                     <div class="meta-row">
-                        <span class="meta-label">Primary UPI ID:</span>
+                        <span class="meta-label">Payment Mode:</span>
                         <div class="meta-value-wrap">
-                            <span class="meta-val" id="upiIdText">vikrant2005@okicici</span>
-                            <button class="btn-copy" onclick="copyText('vikrant2005@okicici', this)">Copy</button>
+                            <span class="meta-val" style="color: var(--accent-emerald);">💵 Cash in Hand / In-Person</span>
                         </div>
                     </div>
                     <div class="meta-row">
-                        <span class="meta-label">Secondary UPI:</span>
-                        <div class="meta-value-wrap">
-                            <span class="meta-val">9819557374@upi</span>
-                            <button class="btn-copy" onclick="copyText('9819557374@upi', this)">Copy</button>
-                        </div>
-                    </div>
-                    <div class="meta-row">
-                        <span class="meta-label">PhonePe / GPay No:</span>
+                        <span class="meta-label">Cash Contact / Phone:</span>
                         <div class="meta-value-wrap">
                             <span class="meta-val">+91 9819557374</span>
                             <button class="btn-copy" onclick="copyText('+919819557374', this)">Copy</button>
                         </div>
                     </div>
                     <div class="meta-row">
-                        <span class="meta-label">Payee / Account:</span>
+                        <span class="meta-label">Lead Engineer / Contact:</span>
                         <div class="meta-value-wrap">
-                            <span class="meta-val" style="font-family: var(--font-sans); font-size: 0.85rem;">Vikrant / Krishna Infotech</span>
+                            <span class="meta-val" style="font-family: var(--font-sans); font-size: 0.85rem;">Vikrant Madane</span>
+                        </div>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Service / Handover Areas:</span>
+                        <div class="meta-value-wrap">
+                            <span class="meta-val" style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--accent-cyan);">Mumbai • Thane • Navi Mumbai • Nashik</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="proof-actions">
-                    <a href="https://wa.me/919819557374?text=Hi%20Vikrant,%20I%20have%20completed%20the%20payment%20for%20the%20Krishna%20Infotech%20website%20source%20code%20package.%20Please%20provide%20my%20secure%20download%20access%20code." target="_blank" rel="noopener noreferrer" class="btn-action btn-wa">
+                    <a href="https://wa.me/919819557374?text=Hi%20Vikrant,%20I%20am%20ready%20with%20the%20cash%20payment%20for%20the%20Krishna%20Infotech%20website%20package.%20Please%20let%20me%20know%20when%20and%20where%20we%20can%20meet%20for%20the%20cash%20handover%20and%20code%20collection." target="_blank" rel="noopener noreferrer" class="btn-action btn-wa">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.073.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.202.043.073.043.419-.101.824z"/>
                         </svg>
-                        Share Payment Proof on WhatsApp
+                        Schedule Cash Handover on WhatsApp
                     </a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vikrant2005@gmail.com&su=Payment%20Proof%20-%20Krishna%20Infotech%20Website%20Package&body=Hi%20Vikrant,%0A%0AI%20have%20transferred%20the%20payment%20for%20the%20Krishna%20Infotech%20website%20source%20code%20package.%20Please%20find%20my%20payment%20screenshot%20attached%20and%20issue%20my%20download%20access%20code.%0A%0AThank%20you!" target="_blank" rel="noopener noreferrer" class="btn-action btn-gmail">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    <a href="tel:+919819557374" class="btn-action btn-call">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        Share Payment Proof via Gmail
+                        Call Vikrant: +91 9819557374
                     </a>
+                </div>
+
+                <!-- Secondary Collapsible UPI Accordion for flexibility -->
+                <div class="upi-secondary-wrap" style="margin-top: 18px; border-top: 1px dashed var(--border-color); padding-top: 16px;">
+                    <details style="cursor: pointer; font-size: 0.82rem; color: var(--text-secondary);">
+                        <summary style="font-weight: 600; color: var(--accent-cyan); outline: none;">
+                            Need to pay via UPI / Online instead? (Click to view QR)
+                        </summary>
+                        <div style="margin-top: 14px; text-align: center; background: var(--bg-secondary); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                            <div style="background: #ffffff; padding: 8px; border-radius: 8px; display: inline-block; margin-bottom: 8px;">
+                                <img src="assets/upi-qr-code.svg" alt="UPI QR" style="width: 140px; height: 140px; display: block;" onerror="this.onerror=null; this.src='assets/upi-qr-code.png';">
+                            </div>
+                            <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 4px;">UPI ID: <strong>vikrant2005@okicici</strong></div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Secondary: 9819557374@upi</div>
+                        </div>
+                    </details>
                 </div>
             </div>
 
@@ -985,7 +1092,7 @@
                 <!-- Error Alert Box -->
                 <div id="errorAlert" class="alert-box alert-error">
                     <strong>⚠️ Verification Code Not Recognized:</strong><br>
-                    Please ensure you typed the code exactly as provided. If you completed payment and haven't received your code, please message Vikrant on WhatsApp: <strong>+91 9819557374</strong>.
+                    Please ensure you typed the code exactly as provided. If you completed cash payment and haven't received your code, please call or message Vikrant on WhatsApp: <strong>+91 9819557374</strong>.
                 </div>
 
                 <!-- Unlocked Container (Shows upon valid code) -->
