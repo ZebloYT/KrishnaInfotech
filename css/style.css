@@ -5275,6 +5275,67 @@ html[data-theme="light"] .theme-icon-light {
   text-transform: uppercase;
 }
 
+/* Persistent Corner Attribution Badge (Fixed Bottom-Left) */
+.corner-credit-badge {
+  position: fixed;
+  bottom: 22px;
+  left: 24px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(11, 14, 22, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.corner-credit-badge:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
+}
+
+.corner-credit-badge a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.15s;
+}
+
+.corner-credit-badge a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-credit a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .corner-credit-badge {
+    bottom: 16px;
+    left: 14px;
+    padding: 5px 11px;
+    font-size: 10px;
+  }
+}
+
 /* ==========================================================================
    THEME SYSTEM: LIGHT MODE ARCHITECTURE & REFINED CONTRAST
    ========================================================================== */
@@ -5589,4 +5650,29 @@ html[data-theme="light"] .theme-icon-light {
 [data-theme="light"] .modal-close-btn:hover {
   background: #e2e8f0;
   color: #0f172a;
+}
+
+/* Light Mode Overrides for Corner Credit Badge */
+[data-theme="light"] .corner-credit-badge {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #cbd5e1;
+  color: #475569;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .corner-credit-badge:hover {
+  border-color: #2563eb;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="light"] .corner-credit-badge a {
+  color: #2563eb;
+}
+
+[data-theme="light"] .corner-credit-badge a:hover {
+  color: #1d4ed8;
+}
+
+[data-theme="light"] .footer-credit a {
+  color: #2563eb;
 }
