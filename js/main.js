@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initPreloader();
   initPageTransitions();
   initMobileNav();
@@ -256,3 +257,41 @@ window.handleComplaintSubmit = function(e) {
   window.open(`https://wa.me/919819557374?text=${text}`, '_blank');
   window.closeModal('complaint-modal');
 };
+
+// 10. Theme Engine: Dark / Light Mode
+function initTheme() {
+  let theme = 'dark';
+  try {
+    const saved = localStorage.getItem('krishna_theme');
+    if (saved === 'light' || saved === 'dark') {
+      theme = saved;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      theme = 'light';
+    }
+  } catch (e) {}
+  applyTheme(theme);
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  try {
+    localStorage.setItem('krishna_theme', theme);
+  } catch (e) {}
+
+  const buttons = document.querySelectorAll('.theme-toggle-btn, .floating-theme-toggle');
+  buttons.forEach(btn => {
+    const isLight = theme === 'light';
+    btn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    btn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+  });
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const target = current === 'light' ? 'dark' : 'light';
+  applyTheme(target);
+}
+
+window.toggleTheme = toggleTheme;
+window.applyTheme = applyTheme;
+window.initTheme = initTheme;

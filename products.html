@@ -11,6 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=3.5">
   <link rel="stylesheet" href="css/products.css">
+  <!-- Pre-render Theme Determination to Eliminate Flash of Dark/Light Theme -->
+  <script>
+    (function() {
+      try {
+        var s = localStorage.getItem('krishna_theme');
+        if (s === 'light' || (!s && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -57,6 +70,16 @@
       </nav>
 
       <div style="display: flex; align-items: center; gap: 10px;">
+        <!-- Theme Toggle Button (Dark / Light Mode) -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" title="Switch to Light / Dark mode">
+          <span class="theme-icon-dark" title="Switch to Light Mode">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+          <span class="theme-icon-light" title="Switch to Dark Mode">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+
         <!-- Header Quick Search -->
         <button onclick="scrollToCatalogAndFocusSearch()" class="header-search-btn" title="Quick Search Hardware (Press /)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -1336,5 +1359,14 @@
   <!-- Complete 33 Products Dataset with Exact Pricing & Interactive E-Commerce Logic -->
   <script src="js/products-catalog.js"></script>
   <script src="js/brand-loader.js"></script>
+  <!-- Floating Quick Theme Toggle (Gigabyte Frame 08 Style) -->
+  <button class="floating-theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+    <span class="theme-icon-dark">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </span>
+    <span class="theme-icon-light">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </span>
+  </button>
 </body>
 </html>
