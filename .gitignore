@@ -13,3 +13,4 @@ models/
 # Scratch & temporary files
 temp*/
 *.bak
+*.zip
