@@ -14,3 +14,5 @@ models/
 temp*/
 *.bak
 _website_source_safe_backup/
+CLIENT_RELEASE_MESSAGE.txt
+
