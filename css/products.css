@@ -5,7 +5,7 @@
 /* Sub-navigation Bar */
 .md-subnav-bar {
   background: rgba(18, 14, 28, 0.95);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.2);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 72px;
@@ -67,7 +67,7 @@
 
 .md-subnav-link:hover, .md-subnav-link.active {
   color: #ffffff;
-  background: rgba(124, 58, 237, 0.15);
+  background: rgba(37, 99, 235, 0.15);
 }
 
 .md-subnav-link.sale-pill {
@@ -107,7 +107,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #e11d48, #7c3aed);
+  background: linear-gradient(90deg, #e11d48, #2563eb);
   border-radius: 2px;
 }
 
@@ -158,7 +158,7 @@
 
 .md-prebuilt-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(124, 58, 237, 0.4);
+  border-color: rgba(37, 99, 235, 0.4);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -304,7 +304,7 @@
 
 .md-hotsale-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(124, 58, 237, 0.4);
+  border-color: rgba(37, 99, 235, 0.4);
 }
 
 .md-discount-badge {
@@ -399,7 +399,7 @@
    ========================================================================== */
 .md-view-build-window {
   background: #110e1a;
-  border: 1px solid rgba(124, 58, 237, 0.35);
+  border: 1px solid rgba(37, 99, 235, 0.35);
   border-radius: var(--radius-lg);
   max-width: 1020px;
   width: 95vw;
@@ -518,8 +518,8 @@
 }
 
 .btn-md-customize {
-  background: rgba(124, 58, 237, 0.15);
-  border: 1px solid rgba(124, 58, 237, 0.4);
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.4);
   color: var(--accent-ink);
   border-radius: var(--radius-sm);
   padding: 12px 22px;
@@ -533,7 +533,7 @@
 }
 
 .btn-md-customize:hover {
-  background: rgba(124, 58, 237, 0.3);
+  background: rgba(37, 99, 235, 0.3);
   border-color: var(--accent);
   color: #ffffff;
 }
@@ -590,8 +590,8 @@
 }
 
 .md-comp-row:hover {
-  background: rgba(124, 58, 237, 0.05);
-  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(37, 99, 235, 0.05);
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 .md-comp-thumb-box {
@@ -660,8 +660,8 @@
 /* Extra High Specificity Subnav Bar Styles */
 .md-subnav-bar {
   background: #141120 !important;
-  border-top: 1px solid rgba(124, 58, 237, 0.25) !important;
-  border-bottom: 1px solid rgba(124, 58, 237, 0.25) !important;
+  border-top: 1px solid rgba(37, 99, 235, 0.25) !important;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.25) !important;
   padding: 8px 0 !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
@@ -703,8 +703,8 @@
 }
 .md-subnav-link:hover {
   color: #ffffff !important;
-  background: rgba(124, 58, 237, 0.25) !important;
-  border-color: #7c3aed !important;
+  background: rgba(37, 99, 235, 0.25) !important;
+  border-color: #2563eb !important;
   transform: translateY(-1px) !important;
 }
 .md-subnav-link.sale-pill {
@@ -762,7 +762,7 @@
   left: 0;
   width: 290px;
   background: rgba(18, 14, 28, 0.98);
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   backdrop-filter: blur(20px);
   border-radius: 8px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
@@ -785,7 +785,7 @@
 }
 
 .subnav-dropdown-item svg {
-  color: #a78bfa;
+  color: #60a5fa;
   flex-shrink: 0;
 }
 
@@ -803,12 +803,12 @@
 }
 
 .subnav-dropdown-item:hover {
-  background: rgba(124, 58, 237, 0.15);
+  background: rgba(37, 99, 235, 0.15);
   color: #ffffff;
 }
 
 .subnav-dropdown-item:hover svg {
-  color: #c4b5fd;
+  color: #93c5fd;
 }
 
 .md-subnav-links {
@@ -854,8 +854,8 @@
 
 .md-subnav-link.active {
   color: #ffffff;
-  background: rgba(124, 58, 237, 0.18);
-  border-color: rgba(124, 58, 237, 0.4);
+  background: rgba(37, 99, 235, 0.18);
+  border-color: rgba(37, 99, 235, 0.4);
 }
 
 .md-subnav-link.sale-pill {
@@ -927,7 +927,7 @@
 
 .popular-cat-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(124, 58, 237, 0.4);
+  border-color: rgba(37, 99, 235, 0.4);
   background: #151124;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
@@ -936,12 +936,12 @@
   width: 44px;
   height: 44px;
   border-radius: 8px;
-  background: rgba(124, 58, 237, 0.12);
-  border: 1px solid rgba(124, 58, 237, 0.25);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c4b5fd;
+  color: #93c5fd;
 }
 
 .pop-cat-info h4 {
@@ -966,7 +966,7 @@
 }
 
 .popular-cat-card:hover .pop-cat-arrow {
-  color: #a78bfa;
+  color: #60a5fa;
   transform: translateX(3px);
 }
 
@@ -987,7 +987,7 @@
 }
 
 .btn-prebuilt-cart:hover {
-  background: rgba(124, 58, 237, 0.25);
+  background: rgba(37, 99, 235, 0.25);
   border-color: var(--accent);
 }
 
@@ -1051,7 +1051,7 @@
 
 .field-input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
 .field-textarea {
@@ -1119,8 +1119,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(124, 58, 237, 0.12);
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   padding: 5px 12px;
   border-radius: 999px;
   font-family: var(--font-mono);
@@ -1181,7 +1181,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  background: linear-gradient(135deg, #2563eb, #6366f1);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -1189,7 +1189,7 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
@@ -1197,7 +1197,7 @@
 
 .btn-dribbble-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.6);
 }
 
 .btn-dribbble-secondary {
@@ -1271,7 +1271,7 @@
   left: 20%;
   width: 60%;
   height: 60%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.22) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
   z-index: 1;
@@ -1291,7 +1291,7 @@
 }
 
 .showcase-card-inner:hover {
-  border-color: rgba(124, 58, 237, 0.45);
+  border-color: rgba(37, 99, 235, 0.45);
 }
 
 .showcase-header {
@@ -1317,7 +1317,7 @@
   height: 7px;
   background: #22c55e;
   border-radius: 50%;
-  box-shadow: 0 0 8px #22c55e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   animation: pulse-dot 1.8s infinite;
 }
 
@@ -1374,17 +1374,17 @@
 .hotspot-ping {
   width: 12px;
   height: 12px;
-  background: #7c3aed;
+  background: #2563eb;
   border: 2px solid #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 12px #7c3aed;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .hotspot-tooltip {
   background: rgba(14, 11, 23, 0.95);
-  border: 1px solid rgba(124, 58, 237, 0.35);
+  border: 1px solid rgba(37, 99, 235, 0.35);
   backdrop-filter: blur(12px);
   padding: 6px 10px;
   border-radius: 6px;
@@ -1482,8 +1482,8 @@
 }
 
 .dock-btn.active {
-  background: rgba(124, 58, 237, 0.25);
-  border-color: rgba(124, 58, 237, 0.45);
+  background: rgba(37, 99, 235, 0.25);
+  border-color: rgba(37, 99, 235, 0.45);
   color: #ffffff;
 }
 
@@ -1512,7 +1512,7 @@
 }
 
 .btn-spotlight-cart:hover {
-  background: rgba(124, 58, 237, 0.3);
+  background: rgba(37, 99, 235, 0.3);
   border-color: var(--accent);
 }
 
