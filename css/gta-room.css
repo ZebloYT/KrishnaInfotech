@@ -1,0 +1,555 @@
+/* ==========================================================================
+   GTA VI STYLE 3D BATTLESTATION ROOM INTRO
+   Inspired by: "Nature Meets Machine PC Gaming Setup" & Rockstar GTA VI UI
+   ========================================================================== */
+
+#gta-intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: #050408;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#gta-intro-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#gta-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Cinematic Letterbox Bars */
+.gta-letterbox-top,
+.gta-letterbox-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000000;
+  z-index: 100;
+  pointer-events: none;
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gta-letterbox-top {
+  top: 0;
+}
+
+.gta-letterbox-bottom {
+  bottom: 0;
+}
+
+.gta-intro-container.cinematic .gta-letterbox-top,
+.gta-intro-container.cinematic .gta-letterbox-bottom {
+  height: 8.5vh;
+}
+
+/* Fullscreen Fitting Mode: Retract bars and clear view for pure monitor fullscreen */
+.gta-intro-container.fullscreen-fitting .gta-letterbox-top,
+.gta-intro-container.fullscreen-fitting .gta-letterbox-bottom {
+  height: 0 !important;
+  transition: height 0.4s ease;
+}
+
+.gta-intro-container.fullscreen-fitting .gta-vignette {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gta-intro-container.fullscreen-fitting .gta-hud,
+.gta-intro-container.fullscreen-fitting .gta-crosshair {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Real Webpage CSS3D Container in 3D Space */
+.gta-css-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gta-css-container iframe {
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.45);
+  transition: box-shadow 0.3s ease;
+}
+
+.gta-intro-container.fullscreen-fitting .gta-css-container iframe {
+  box-shadow: none;
+  border-color: transparent !important;
+}
+
+/* Subtle Cinematic Edge Vignette */
+.gta-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Crosshair for first-person interaction */
+.gta-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 15;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.gta-crosshair.active {
+  background: #00f2fe;
+  transform: translate(-50%, -50%) scale(2);
+  box-shadow: 0 0 10px #00f2fe;
+}
+
+/* GTA HUD Elements */
+.gta-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Top Right: Clock, Money & Location */
+.gta-top-hud {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  pointer-events: auto;
+}
+
+.gta-time-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gta-clock {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.gta-badge-state {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff2a85;
+  background: rgba(255, 42, 133, 0.15);
+  border: 1px solid rgba(255, 42, 133, 0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.gta-cash {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  font-weight: 800;
+  color: #00e676;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0, 230, 118, 0.35);
+}
+
+.gta-zone-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a78bfa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Skip Button */
+.gta-skip-btn {
+  margin-top: 10px;
+  background: rgba(14, 11, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.gta-skip-btn:hover {
+  background: rgba(225, 29, 72, 0.8);
+  border-color: #f43f5e;
+  transform: translateY(-1px);
+}
+
+/* Top Center: GTA VI Style Mission Objective Banner */
+.gta-objective-card {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15, 11, 25, 0.88);
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  border-left: 4px solid #00f2fe;
+  padding: 10px 20px;
+  border-radius: 6px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  max-width: 90%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.gta-objective-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #00f2fe;
+  letter-spacing: 0.08em;
+}
+
+.gta-objective-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+/* Bottom Left: GTA VI Style Radar Mini-Map */
+.gta-radar-wrapper {
+  position: absolute;
+  bottom: 24px;
+  left: 28px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.gta-radar-ring {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 12, 28, 0.9) 0%, rgba(8, 6, 14, 0.95) 75%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gta-radar-ring::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff2a85, #00f2fe, #7c3aed);
+  z-index: -1;
+}
+
+.gta-radar-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.gta-radar-hud-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.gta-radar-city {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #00f2fe;
+  letter-spacing: 0.06em;
+}
+
+.gta-radar-street {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Interactive Sit Prompt (Over Battlestation) */
+.gta-interact-prompt {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: rgba(14, 11, 23, 0.94);
+  border: 1px solid rgba(0, 242, 254, 0.5);
+  padding: 12px 24px;
+  border-radius: 8px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 24px rgba(0, 242, 254, 0.25);
+  cursor: pointer;
+  pointer-events: auto;
+  animation: promptPulse 1.8s infinite;
+}
+
+.gta-interact-prompt.visible {
+  display: flex;
+}
+
+@keyframes promptPulse {
+  0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 16px rgba(0, 242, 254, 0.2); }
+  50% { transform: translateX(-50%) scale(1.03); box-shadow: 0 0 28px rgba(0, 242, 254, 0.45); }
+  100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 16px rgba(0, 242, 254, 0.2); }
+}
+
+.gta-key-pill {
+  width: 28px;
+  height: 28px;
+  background: #00f2fe;
+  color: #000000;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 242, 254, 0.5);
+}
+
+.gta-interact-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+/* Bottom Controls Helper */
+.gta-controls-bar {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(13, 10, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 18px;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.gta-ctrl-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gta-kbd {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Mobile Virtual Joystick & Action Buttons */
+.gta-mobile-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .gta-mobile-controls {
+    display: flex;
+  }
+  .gta-controls-bar {
+    display: none;
+  }
+  .gta-radar-wrapper {
+    bottom: 90px;
+    left: 16px;
+  }
+}
+
+.gta-touch-btn {
+  pointer-events: auto;
+  background: rgba(14, 11, 23, 0.85);
+  border: 1px solid rgba(0, 242, 254, 0.5);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Replay Button in Header Bar */
+.btn-replay-gta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(255, 42, 133, 0.18), rgba(0, 242, 254, 0.18));
+  border: 1px solid rgba(0, 242, 254, 0.4);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-replay-gta:hover {
+  background: linear-gradient(135deg, rgba(255, 42, 133, 0.35), rgba(0, 242, 254, 0.35));
+  border-color: #00f2fe;
+  transform: translateY(-1px);
+}
+
+/* GTA VI Live RGB Controller Badge */
+.gta-rgb-badge {
+  position: absolute;
+  top: 76px;
+  right: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(14, 11, 23, 0.85);
+  border: 1px solid rgba(0, 242, 254, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 242, 254, 0.25);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00f2fe;
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.gta-rgb-badge:hover {
+  border-color: #ff2a85;
+  color: #ff2a85;
+  box-shadow: 0 4px 22px rgba(255, 42, 133, 0.4);
+  transform: translateY(-1px);
+}
+
+.gta-rgb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00f2fe;
+  box-shadow: 0 0 10px #00f2fe;
+  animation: rgbPulse 1.8s infinite alternate;
+}
+
+@keyframes rgbPulse {
+  0% { background: #00f2fe; box-shadow: 0 0 10px #00f2fe; }
+  50% { background: #ff2a85; box-shadow: 0 0 14px #ff2a85; }
+  100% { background: #7c3aed; box-shadow: 0 0 12px #7c3aed; }
+}
+
+/* 3D Asset Stream Loader Bar */
+.gta-asset-loader {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(12, 10, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.gta-asset-loader.fade-out {
+  opacity: 0;
+}
+
+.gta-asset-bar {
+  width: 140px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.gta-asset-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff2a85, #00f2fe);
+  transition: width 0.3s ease;
+}

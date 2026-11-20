@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Infotech — The Team of Experts | Enterprise IT & ERP Software</title>
+  <meta name="description" content="Single-point enterprise IT infrastructure, 4K CCTV surveillance, structured Cat6/fiber cabling, and proprietary GST ERP & AMC software across Mumbai, Thane, Navi Mumbai & Nashik.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Page Load Bar Animation -->
+  <div id="page-preloader"><div class="preloader-bar"></div></div>
+
+  <!-- Ambient Dynamic Constellation BG Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="hub-label"><span class="hub-dot"></span> Mumbai • Thane • Navi Mumbai • Nashik</span>
+        <div class="top-links">
+          <a href="#complaints" onclick="openModal('complaint-modal'); return false;">Support &amp; Complaints</a>
+          <a href="tel:+919819557374">Helpdesk: +91 9819557374</a>
+        </div>
+      </div>
+
+      <div class="portal-launchers">
+        <button type="button" onclick="playBrandLoader(true)" class="btn-replay-intro" title="Replay 3D motion graphics brand intro">↺ 3D Intro</button>
+        <span style="font-size: 12px; color: var(--text-muted);">Portals:</span>
+        <a href="https://krishanerp.online/" target="_blank" class="portal-tag" rel="noopener">KrishnaERP Login ↗</a>
+        <a href="https://amskrishna.online/" target="_blank" class="portal-tag" rel="noopener">AMSKRISHNA Login ↗</a>
+        <a href="contact.html#kdesk-info" class="portal-tag" style="color: var(--semantic-green);">KDesk Remote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation (5 Dedicated Pages) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link" title="Krishna Infotech Home">
+        <img src="assets/logo.png" alt="Krishna Infotech - The Team of Experts" class="brand-logo-img">
+      </a>
+
+      <!-- 4 Dedicated Page Buttons -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="products.html" class="nav-link">Hardware &amp; Custom PCs</a>
+        <a href="contact.html" class="nav-link">About &amp; Contact</a>
+        <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+      </nav>
+
+      <a href="#quote-section" class="header-cta">
+        Request Quote
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" aria-label="Toggle Navigation">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay & Drawer Panel (4 Pages) -->
+  <div class="nav-overlay"></div>
+  <aside class="mobile-nav-panel">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="products.html" class="nav-link">Hardware &amp; Custom PCs</a>
+    <a href="contact.html" class="nav-link">About &amp; Contact</a>
+    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+    <hr style="border-color: var(--border-subtle); margin: 0.5rem 0;">
+    <a href="https://wa.me/919819557374?text=Hello%20Krishna%20Infotech%2C%20I%20would%20like%20to%20request%20a%20quote." target="_blank" class="btn-whatsapp" style="justify-content: center;" rel="noopener">
+      WhatsApp Quote
+    </a>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-split">
+        <div>
+          <div class="hero-kicker">
+            [ INFRASTRUCTURE ENGINEERING &amp; PROPRIETARY GST ERP ]
+          </div>
+          <h1 class="hero-heading">
+            Enterprise IT hardware, security surveillance, and custom ERP software.
+          </h1>
+          <p class="hero-desc">
+            Led by proprietor Vikrant Madane, Krishna Infotech eliminates vendor finger-pointing. We supply branded workstations, run Fluke-certified Cat6/fiber cabling, and build in-house GST billing and AMC management portals.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="products.html" class="btn-primary">
+              Explore Hardware &amp; Custom PCs
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/919819557374?text=Hello%20Vikrant%2C%20I%20would%20like%20to%20request%20an%20IT%20infrastructure%20quote." target="_blank" class="btn-whatsapp" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Chat on WhatsApp
+            </a>
+            <a href="products.html#custom-pc-builder" class="btn-secondary" style="border-color: rgba(124, 58, 237, 0.5); color: var(--accent-ink);">
+              Custom PC Rig Studio
+            </a>
+            <a href="contact.html" class="btn-secondary">
+              Contact &amp; Support
+            </a>
+          </div>
+
+          <div class="hero-entity-meta">
+            <div>GSTIN: <strong>27AOAPM2539L1ZR</strong></div>
+            <div>Firm: <strong>Krishna Infotech</strong></div>
+            <div>Proprietor: <strong>Vikrant Madane</strong></div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications Card -->
+        <div class="hero-visual">
+          <div class="hero-img-frame">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Enterprise datacenter server rack installation">
+          </div>
+          <div class="hero-dossier">
+            <div class="dossier-header">
+              <span style="color: var(--accent-ink);">FIELD ENGINEERING AUDIT</span>
+              <span style="color: var(--semantic-green);">● UPTIME GUARANTEE</span>
+            </div>
+            <h3 class="dossier-title">Integrated Hardware &amp; Cloud Maintenance</h3>
+            <p class="dossier-sub">
+              Single-point maintenance contracts covering physical workstations, 4K CCTV NVR matrices, and proprietary billing software.
+            </p>
+            <div class="dossier-grid">
+              <div class="dossier-cell">
+                <span>Hub Coverage</span>
+                <strong>Mumbai &amp; Thane</strong>
+              </div>
+              <div class="dossier-cell">
+                <span>Extended Hubs</span>
+                <strong>Navi Mumbai &amp; Nashik</strong>
+              </div>
+              <div class="dossier-cell">
+                <span>Hardware Warranty</span>
+                <strong>Full OEM Coverage</strong>
+              </div>
+              <div class="dossier-cell">
+                <span>Emergency SLA</span>
+                <strong>2 to 4 Hr On-Site</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Measured Figures (Tabular-nums, Verified Facts) -->
+  <section class="metrics-bar">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-block">
+          <div class="metric-value">4</div>
+          <div class="metric-label">Key Maharashtra Industrial Hubs</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-value">15+</div>
+          <div class="metric-label">Years Continuous IT Engineering</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-value">3</div>
+          <div class="metric-label">Proprietary Software Platforms</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-value">99.9%</div>
+          <div class="metric-label">Target AMC Operational Uptime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services & Technical Specs Preview -->
+  <section class="section-pad" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">[ CORE TECHNICAL DISCIPLINES ]</span>
+        <h2 class="section-title">Hardware Sales, Surveillance &amp; Cloud Systems</h2>
+        <p class="section-desc">
+          Complete procurement, deployment, cabling, and Annual Maintenance Contracts tailored for commercial offices, factories, and residential cooperative societies.
+        </p>
+      </div>
+
+      <div class="services-stack">
+        
+        <!-- Module 1: Computers, Laptops & Printers -->
+        <article class="service-row">
+          <div class="service-thumb">
+            <span class="service-index">DISCIPLINE 01</span>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Motherboard chip-level BGA rework station">
+          </div>
+          <div class="service-content">
+            <div>
+              <h3 class="service-name">Computers, Laptops &amp; Printers</h3>
+              <p class="service-summary">
+                Enterprise desktop and commercial laptop sales, NVMe SSD and RAM upgrades, network laser and inktank printer setups, component-level motherboard repairs, and comprehensive IT AMC.
+              </p>
+              <table class="service-table">
+                <tr>
+                  <td>Workstations</td>
+                  <td>Intel Core i3–i9 (12th–14th Gen) and AMD Ryzen Pro; SFF, micro-towers, and commercial laptops (Dell Latitude, HP ProBook, Lenovo ThinkPad)</td>
+                </tr>
+                <tr>
+                  <td>Storage &amp; RAM</td>
+                  <td>PCIe Gen4 NVMe M.2 SSDs (up to 7,000 MB/s); DDR4 3200MHz and DDR5 5600MHz RAM modules with zero-loss data cloning</td>
+                </tr>
+                <tr>
+                  <td>Network Printing</td>
+                  <td>Monochrome and Color LaserJet MFPs, heavy-duty duplex inktank setups, SNMP network monitoring, and automatic toner alerts</td>
+                </tr>
+                <tr>
+                  <td>Chip-Level Lab</td>
+                  <td>Motherboard BGA rework station, SMD power IC replacement, short-circuit diagnostics, and precision BIOS reflashing</td>
+                </tr>
+              </table>
+            </div>
+            <div class="service-footer">
+              <div class="spec-pills-row">
+                <span class="micro-pill">DDR4 / DDR5</span>
+                <span class="micro-pill">NVMe Gen4</span>
+                <span class="micro-pill">BGA Component Level</span>
+                <span class="micro-pill">Network MFP</span>
+              </div>
+              <a href="products.html#catalog" class="btn-secondary" style="padding: 6px 14px; font-size: 13px;">
+                View PCs &amp; Laptops Store →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Module 2: CCTV & Biometric Security -->
+        <article class="service-row">
+          <div class="service-thumb">
+            <span class="service-index">DISCIPLINE 02</span>
+            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV camera surveillance lens">
+          </div>
+          <div class="service-content">
+            <div>
+              <h3 class="service-name">CCTV &amp; Biometric Security</h3>
+              <p class="service-summary">
+                High-definition IP and HD CCTV cameras, 16/32-channel 4K NVR and DVR installations, AI face-recognition attendance machines, and heavy-duty electromagnetic door access control.
+              </p>
+              <table class="service-table">
+                <tr>
+                  <td>Surveillance Cameras</td>
+                  <td>2MP, 5MP, and 4K Ultra HD IP cameras with ColorVu full-color night vision and IP67 weather resistance</td>
+                </tr>
+                <tr>
+                  <td>Recording Units</td>
+                  <td>16, 32, and 64-channel 4K NVRs with smart H.265+ compression, reducing storage consumption by up to 70%</td>
+                </tr>
+                <tr>
+                  <td>Biometric Attendance</td>
+                  <td>AI facial recognition terminals (0.2s matching, anti-spoof dual lens), optical fingerprint sensors, and RFID integration</td>
+                </tr>
+                <tr>
+                  <td>Access Control</td>
+                  <td>600 lbs and 1200 lbs electromagnetic (EM) fail-safe door locks, touchless exit sensors, and dedicated battery backups</td>
+                </tr>
+              </table>
+            </div>
+            <div class="service-footer">
+              <div class="spec-pills-row">
+                <span class="micro-pill">4K ColorVu</span>
+                <span class="micro-pill">H.265+ NVR</span>
+                <span class="micro-pill">Face AI 0.2s</span>
+                <span class="micro-pill">EM Door Lock</span>
+              </div>
+              <a href="products.html#catalog" class="btn-secondary" style="padding: 6px 14px; font-size: 13px;">
+                View CCTV &amp; Security Store →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Module 3: Networking & Building Intercoms -->
+        <article class="service-row">
+          <div class="service-thumb">
+            <span class="service-index">DISCIPLINE 03</span>
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Managed network switches and fiber patch cords">
+          </div>
+          <div class="service-content">
+            <div>
+              <h3 class="service-name">Networking &amp; Building Intercoms</h3>
+              <p class="service-summary">
+                Structured Cat6 and fiber LAN cabling, enterprise Wi-Fi 6 mesh, managed Layer 2/3 switches, dual-WAN load balancing routers, and multi-port EPABX building intercom installations.
+              </p>
+              <table class="service-table">
+                <tr>
+                  <td>Structured Cabling</td>
+                  <td>100% solid copper Cat6 and Cat6A UTP/FTP cabling; single-mode and multimode fiber optic splicing and server rack dressing</td>
+                </tr>
+                <tr>
+                  <td>Testing Standards</td>
+                  <td>Fluke DTX-1800 certification testing for wiremap, insertion loss, NEXT, and return loss with signed reports</td>
+                </tr>
+                <tr>
+                  <td>Active Switching</td>
+                  <td>Gigabit and 10G SFP+ Layer 2/3 managed switches with VLAN isolation, QoS priority, and redundant power supplies</td>
+                </tr>
+                <tr>
+                  <td>EPABX Systems</td>
+                  <td>Multi-port digital EPABX systems (16 to 256+ extensions) for corporate offices and residential cooperative societies</td>
+                </tr>
+              </table>
+            </div>
+            <div class="service-footer">
+              <div class="spec-pills-row">
+                <span class="micro-pill">Fluke Certified</span>
+                <span class="micro-pill">10G SFP+</span>
+                <span class="micro-pill">Wi-Fi 6</span>
+                <span class="micro-pill">EPABX 256-Port</span>
+              </div>
+              <a href="contact.html" class="btn-secondary" style="padding: 6px 14px; font-size: 13px;">
+                Contact Networking Team →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Module 4: Cloud & Custom Software Development -->
+        <article class="service-row">
+          <div class="service-thumb">
+            <span class="service-index">DISCIPLINE 04</span>
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80" alt="Software engineer configuring cloud ERP system">
+          </div>
+          <div class="service-content">
+            <div>
+              <h3 class="service-name">Cloud &amp; Custom Software Development</h3>
+              <p class="service-summary">
+                Custom web and mobile applications, GST billing and inventory ERPs, self-hosted private NAS clouds, site-to-site VPN backups, and encrypted remote desktop support.
+              </p>
+              <table class="service-table">
+                <tr>
+                  <td>KrishnaERP Platform</td>
+                  <td>Full-featured GST billing, automated party ledger synchronization, inventory batch tracking, and direct government e-invoicing QR compliance</td>
+                </tr>
+                <tr>
+                  <td>AMSKRISHNA Platform</td>
+                  <td>Multi-role AMC service portal with role-based access for Admin, Manager, Field Engineer, and Client with digital sign-offs</td>
+                </tr>
+                <tr>
+                  <td>KDesk Remote Support</td>
+                  <td>Lightweight 256-bit AES encrypted remote desktop executable for fast, unattended client assistance without administrative blocks</td>
+                </tr>
+                <tr>
+                  <td>Private Cloud NAS</td>
+                  <td>Synology and TrueNAS enterprise arrays with RAID 1/5/10 disk redundancy, automated snapshot backups, and ransomware defense</td>
+                </tr>
+              </table>
+            </div>
+            <div class="service-footer">
+              <div class="spec-pills-row">
+                <span class="micro-pill">KrishnaERP</span>
+                <span class="micro-pill">AMSKRISHNA</span>
+                <span class="micro-pill">KDesk 256-Bit</span>
+                <span class="micro-pill">RAID 10 NAS</span>
+              </div>
+              <a href="products.html" class="btn-secondary" style="padding: 6px 14px; font-size: 13px;">
+                Explore Software Suite →
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Digital AMC & ERP Telemetry (Autovity Inspired, Real Data) -->
+  <section class="section-pad dashboard-section" id="digital-reporting">
+    <div class="container">
+      <div class="dash-split">
+        <div>
+          <span class="section-eyebrow">[ DIGITAL SERVICE MANAGEMENT ]</span>
+          <h2 class="section-title">Field Visibility Through In-House Software</h2>
+          <p class="section-desc">
+            Unlike traditional vendors who rely on paper job slips and unrecorded phone calls, Krishna Infotech operates on our proprietary digital management stack.
+          </p>
+
+          <ul class="dash-checkmarks">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <strong>Digital Service Slips &amp; Signatures</strong>
+                Engineers log replacement components, photos, and customer digital signatures right from the field.
+              </div>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <strong>Automated GST E-Invoicing</strong>
+                Invoices generated in KrishnaERP sync with the government portal with dynamic QR codes.
+              </div>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <strong>Zero-Delay Remote Support via KDesk</strong>
+                Encrypted remote sessions allow our engineers to troubleshoot software anomalies without travel delays.
+              </div>
+            </li>
+          </ul>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://amskrishna.online/" target="_blank" class="btn-primary" rel="noopener">Launch AMSKRISHNA ↗</a>
+            <a href="https://krishanerp.online/" target="_blank" class="btn-secondary" rel="noopener">Launch KrishnaERP ↗</a>
+          </div>
+        </div>
+
+        <!-- Real Telemetry Table Dossier -->
+        <div class="portal-dossier-card">
+          <div class="portal-card-top">
+            <span style="color: #ffffff; font-weight: 600;">AMSKRISHNA // LIVE FIELD TICKETS</span>
+            <span class="live-indicator"><span class="hub-dot"></span> 6 ACTIVE LOGS</span>
+          </div>
+          <div class="portal-rows">
+            
+            <div class="portal-row-item">
+              <span class="p-ticket">#TK-4081</span>
+              <div>
+                <div class="p-job">32-Channel NVR &amp; Camera 14 Restoration</div>
+                <div class="p-site">Badlapur Cooperative Housing Society</div>
+              </div>
+              <span class="p-site">Nov 19, 2026</span>
+              <span class="status-badge badge-done">Resolved</span>
+            </div>
+
+            <div class="portal-row-item">
+              <span class="p-ticket">#TK-4082</span>
+              <div>
+                <div class="p-job">Fluke DTX-1800 Permanent Link Certification</div>
+                <div class="p-site">Navi Mumbai MIDC Tech Park</div>
+              </div>
+              <span class="p-site">Nov 19, 2026</span>
+              <span class="status-badge badge-cert">Fluke Pass</span>
+            </div>
+
+            <div class="portal-row-item">
+              <span class="p-ticket">#TK-4083</span>
+              <div>
+                <div class="p-job">Core Workstation 64GB DDR5 &amp; NVMe Upgrade</div>
+                <div class="p-site">Thane Corporate Office</div>
+              </div>
+              <span class="p-site">Nov 19, 2026</span>
+              <span class="status-badge badge-progress">In Progress</span>
+            </div>
+
+            <div class="portal-row-item">
+              <span class="p-ticket">#ERP-9104</span>
+              <div>
+                <div class="p-job">GSTR-1 &amp; E-Way Bill Auto-Reconciliation</div>
+                <div class="p-site">krishanerp.online Platform</div>
+              </div>
+              <span class="p-site">Nov 19, 2026</span>
+              <span class="status-badge badge-done">Tax Synced</span>
+            </div>
+
+            <div class="portal-row-item">
+              <span class="p-ticket">#AMC-3112</span>
+              <div>
+                <div class="p-job">Q4 Scheduled Preventive Hardware AMC</div>
+                <div class="p-site">Nashik Industrial Manufacturing Plant</div>
+              </div>
+              <span class="p-site">Nov 21, 2026</span>
+              <span class="status-badge badge-progress">Scheduled</span>
+            </div>
+
+            <div class="portal-row-item">
+              <span class="p-ticket">#KDK-108</span>
+              <div>
+                <div class="p-job">KDesk 256-bit Encrypted Diagnostics</div>
+                <div class="p-site">Fort, South Mumbai Trading Firm</div>
+              </div>
+              <span class="p-site">Just now</span>
+              <span class="status-badge badge-cert">Connected</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solving Real Commercial IT Bottlenecks -->
+  <section class="section-pad" id="bottlenecks">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">[ WHY BUSINESSES CHOOSE US ]</span>
+        <h2 class="section-title">Solving the Real Bottlenecks in Commercial IT</h2>
+        <p class="section-desc">
+          We designed our business model around resolving the four most persistent headaches facing office administrators, factory managers, and residential societies.
+        </p>
+      </div>
+
+      <div class="bottlenecks-grid">
+        <div class="bn-card">
+          <div>
+            <div class="bn-num">01 / ACCOUNTABILITY</div>
+            <h3 class="bn-title">No Vendor Finger-Pointing</h3>
+            <p class="bn-desc">
+              When hardware and software come from separate vendors, each blames the other during downtime. Krishna Infotech engineers both physical infrastructure and custom software under single accountability.
+            </p>
+          </div>
+        </div>
+
+        <div class="bn-card">
+          <div>
+            <div class="bn-num">02 / PREVENTION</div>
+            <h3 class="bn-title">Preventive Maintenance Schedules</h3>
+            <p class="bn-desc">
+              Quarterly maintenance cycles tracked in AMSKRISHNA ensure thermal paste refreshes, hard disk SMART health checks, and firmware updates happen before catastrophic failure.
+            </p>
+          </div>
+        </div>
+
+        <div class="bn-card">
+          <div>
+            <div class="bn-num">03 / COMPLIANCE</div>
+            <h3 class="bn-title">Transparent GST Billing</h3>
+            <p class="bn-desc">
+              All hardware sales and AMC contracts are invoiced under official GSTIN 27AOAPM2539L1ZR with full Input Tax Credit (ITC) eligibility and verified manufacturer warranty cards.
+            </p>
+          </div>
+        </div>
+
+        <div class="bn-card">
+          <div>
+            <div class="bn-num">04 / RESPONSE</div>
+            <h3 class="bn-title">2 to 4 Hour On-Site Dispatch</h3>
+            <p class="bn-desc">
+              Dedicated field engineers stationed across Mumbai, Thane, Navi Mumbai, and Nashik respond quickly, backed by instant remote triage via KDesk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OEM Hardware Marquee -->
+  <section class="oem-section">
+    <div class="container">
+      <div class="oem-flex">
+        <span class="oem-heading">OEM Hardware We Supply &amp; Service:</span>
+        <span class="oem-brand">HIKVISION</span>
+        <span class="oem-brand">DAHUA</span>
+        <span class="oem-brand">CP PLUS</span>
+        <span class="oem-brand">SECUREYE</span>
+        <span class="oem-brand">D-LINK</span>
+        <span class="oem-brand">TP-LINK</span>
+        <span class="oem-brand">CISCO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request a Technical Quote Box (2-Hour Response Commitment) -->
+  <section class="section-pad" id="quote-section">
+    <div class="container">
+      <div class="quote-card">
+        <div>
+          <span class="section-eyebrow">[ COMMERCIAL QUOTATIONS ]</span>
+          <h2 class="section-title" style="font-size: 26px;">Tell us what you need. We reply within 2 hours.</h2>
+          <p style="color: var(--text-secondary); font-size: 14.5px; line-height: 1.65; margin-bottom: 20px;">
+            Share your hardware, CCTV, networking, or ERP requirements. You will receive genuine OEM pricing, manufacturer warranty guarantees, and transparent GST billing directly from proprietor Vikrant Madane.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 12.5px; color: var(--accent-ink); display: flex; flex-direction: column; gap: 4px;">
+            <span>✓ Registered GSTIN: 27AOAPM2539L1ZR</span>
+            <span>✓ Direct WhatsApp Consultation: +91 9819557374</span>
+          </div>
+        </div>
+
+        <div>
+          <form onsubmit="handleQuoteSubmit(event)">
+            <div class="field-group">
+              <input type="text" id="q-name" class="field-input" placeholder="Your Name or Business Name *" required>
+            </div>
+            <div class="field-group">
+              <input type="tel" id="q-phone" class="field-input" placeholder="Mobile / WhatsApp Number *" required>
+            </div>
+            <div class="field-group">
+              <select id="q-service" class="field-input" required>
+                <option value="Computers, Laptops & Printers">Computers, Laptops &amp; Printers AMC</option>
+                <option value="CCTV & Biometric Security">CCTV &amp; Biometric Security Systems</option>
+                <option value="Networking & Building Intercoms">Structured Networking &amp; EPABX Intercoms</option>
+                <option value="KrishnaERP GST Software">KrishnaERP GST Billing &amp; Inventory Suite</option>
+                <option value="AMSKRISHNA AMC Software">AMSKRISHNA Contract Management Platform</option>
+                <option value="KDesk Remote Support">KDesk Encrypted Remote Support</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <textarea id="q-msg" class="field-input" style="height: 80px; resize: none;" placeholder="Requirement details (e.g. 16-channel CCTV setup for factory in Navi Mumbai)..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 11px;">
+              Send Requirement via WhatsApp →
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complaints & Support Modal (Directly Inspired by Global Lab) -->
+  <div class="modal-backdrop" id="complaint-modal">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal('complaint-modal')">✕</button>
+      <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 4px;">Priority Support &amp; Complaints</h3>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 20px;">
+        Issues submitted here route directly to proprietor Vikrant Madane. Emergency response within 2 hours.
+      </p>
+      <form onsubmit="handleComplaintSubmit(event)">
+        <div class="field-group">
+          <input type="text" id="comp-name" class="field-input" placeholder="Personnel Name *" required>
+        </div>
+        <div class="field-group">
+          <input type="tel" id="comp-phone" class="field-input" placeholder="Contact Mobile *" required>
+        </div>
+        <div class="field-group">
+          <textarea id="comp-desc" class="field-input" style="height: 90px; resize: none;" placeholder="Describe technical issue, equipment affected, or site address *" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 11px;">
+          Submit to Priority WhatsApp Helpdesk
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <img src="assets/logo.png" alt="Krishna Infotech Logo" style="height: 44px; width: auto;">
+          </div>
+          <p class="footer-brand-desc">
+            Complete IT hardware, CCTV surveillance, biometric access, structured networking &amp; proprietary ERP software across Mumbai, Thane, Navi Mumbai &amp; Nashik.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-ink); margin-top: 12px;">
+            GSTIN: 27AOAPM2539L1ZR
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Hardware &amp; Custom PCs</a></li>
+            <li><a href="contact.html">About &amp; Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">In-House Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://krishanerp.online/" target="_blank" rel="noopener">KrishnaERP.online ↗</a></li>
+            <li><a href="https://amskrishna.online/" target="_blank" rel="noopener">AMSKRISHNA.online ↗</a></li>
+            <li><a href="contact.html#kdesk-info">KDesk Remote Support</a></li>
+            <li><a href="#quote-section">Request Commercial Quote</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Registered Office</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px;">
+            B 004 Ground Floor, Krishnadeep Co. Op. Housing Society, Badlapur East, Thane 421503, Maharashtra, India
+          </p>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 4px;">
+            <strong>Phone / WhatsApp:</strong> <a href="tel:+919819557374" style="color: #fff; text-decoration: none;">+91 9819557374</a>
+          </p>
+          <p style="font-size: 13px; color: var(--text-secondary);">
+            <strong>Email:</strong> <a href="mailto:vikrant2005@gmail.com" style="color: var(--accent-ink); text-decoration: none;">vikrant2005@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Krishna Infotech. All rights reserved. Proprietor: Vikrant Madane • GSTIN: 27AOAPM2539L1ZR</div>
+        <div>
+          <a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none; margin-left: 16px;">Privacy Policy</a>
+          <a href="#complaints" onclick="openModal('complaint-modal'); return false;" style="color: var(--accent-ink); text-decoration: none; margin-left: 16px;">Support &amp; Complaints</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/three.min.js"></script>
+  <script src="js/fflate.min.js"></script>
+  <script src="js/GLTFLoader.js"></script>
+  <script src="js/FBXLoader.js"></script>
+  <script src="js/bg-animation.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/brand-loader.js"></script>
+</body>
+</html>

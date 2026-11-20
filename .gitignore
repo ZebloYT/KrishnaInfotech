@@ -1,0 +1,15 @@
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Heavy screen recordings & prototypes
+videos/
+
+# 3D models from removed GTA intro
+models/
+
+# Scratch & temporary files
+temp*/
+*.bak
