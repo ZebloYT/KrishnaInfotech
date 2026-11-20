@@ -13,4 +13,4 @@ models/
 # Scratch & temporary files
 temp*/
 *.bak
-*.zip
+_website_source_safe_backup/

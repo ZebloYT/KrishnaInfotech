@@ -1,80 +1,62 @@
-# Krishna Infotech — Enterprise IT Infrastructure & Custom PC Platform
+# Krishna Infotech — Client Handover & Secure Access Gateway
 
-> Commercial IT infrastructure, 4K CCTV surveillance, structured Cat6/fiber cabling, bespoke custom PC configurator, and proprietary GST ERP & AMC software across Mumbai, Thane, Navi Mumbai, and Nashik.
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat&logo=threedotjs&logoColor=white)](https://threejs.org/)
+> **Official Delivery Portal** for the Krishna Infotech Enterprise Web Platform & Custom PC Configurator. Crafted by [trendustyorbit.online](https://trendustyorbit.online).
 
 ---
 
-## 🚀 Key Features
+## 🔒 Client Delivery & Verification Gateway
 
-* **Complete Hardware Catalog (`products.html`)**:
-  * 33 distributor-direct genuine boxed hardware components and systems.
-  * Categories: Pre-Built PCs, Hot Deals & High-Speed Storage, Processors & GPUs (up to RTX 5090 32GB), Motherboards, RAM, Monitors, CCTV Surveillance, and Certified Refurbished Workstations/Laptops.
-  * Real-time search, category filters, and product specification modals.
+This repository serves as the official client handover gateway. The complete, production-ready website source code is packaged in the verified release archive:
 
-* **Custom PC Studio (10-Slot Configurator)**:
-  * Full interactive build configurator: CPU, Motherboard, GPU, RAM, Storage (SSD), Power Supply, Cabinet, CPU Cooler, Gaming/Pro Monitor, and Desk Mat.
-  * Live wattage calculation and budget total tracking.
-  * One-click WhatsApp Quotation generation.
+📦 **`KrishnaInfotech-Production-Website.zip`** (6.82 MB, 119 files)
 
-* **Direct WhatsApp Quotation Engine**:
-  * Formats complete Bill of Materials (BOM), item quantities, customer name, contact phone, delivery site address, and official GST breakdown directly to WhatsApp (`+91 9819557374`).
+### How to Unlock the Source Code Archive:
 
-* **Interactive 3D Motion Presentation & Background Canvas**:
-  * Precision brand emblem assembly loader (`js/brand-loader.js`) with on-demand 3D motion presentation.
-  * Subtle interactive constellation particle network background (`js/bg-animation.js`).
-
-* **Business Identity & Verified Entity**:
-  * **Firm**: Krishna Infotech
-  * **Proprietor**: Vikrant Madane
-  * **GSTIN**: 27AOAPM2539L1ZR
-  * **Service Areas**: Mumbai • Thane • Navi Mumbai • Nashik
+1. **Visit the Gateway**: Open `index.html` (or the deployed GitHub Pages portal).
+2. **Transfer Payment**:
+   * **Primary UPI ID**: `vikrant2005@okicici`
+   * **Secondary UPI ID**: `9819557374@upi`
+   * **PhonePe / Google Pay**: `+91 9819557374`
+   * **Payee**: Vikrant / Krishna Infotech
+3. **Share Payment Confirmation**:
+   * **WhatsApp**: [+91 9819557374](https://wa.me/919819557374?text=Hi%20Vikrant,%20I%20have%20completed%20the%20payment%20for%20the%20Krishna%20Infotech%20website%20source%20code%20package.%20Please%20provide%20my%20secure%20download%20access%20code.)
+   * **Gmail**: [vikrant2005@gmail.com](mailto:vikrant2005@gmail.com)
+4. **Receive Unlock Code**:
+   * Vikrant issues your authorized single-use verification code (e.g. `KI-PAY-2026`).
+5. **Download Archive**:
+   * Enter the code on the gateway page to immediately decrypt and download `KrishnaInfotech-Production-Website.zip`.
+   * *Direct 1-Click Link format*: `index.html?code=YOUR_CODE`
 
 ---
 
-## 📂 Repository Structure
+## 📦 What's Inside `KrishnaInfotech-Production-Website.zip`
 
-```text
-├── assets/                  # Logos, product images, component icons
-├── css/
-│   ├── style.css            # Core design system and shared styles
-│   └── products.css         # Catalog, builder, and e-commerce styles
-├── js/
-│   ├── bg-animation.js      # Ambient constellation canvas
-│   ├── brand-loader.js      # 3D motion graphics brand presentation
-│   ├── main.js              # Site navigation, drawer, and global interactions
-│   └── products-catalog.js  # 33-product dataset, builder, cart & WhatsApp logic
-├── index.html               # Corporate homepage & enterprise IT services
-├── products.html            # Hardware catalog, custom PC studio & cart
-├── contact.html             # Business details, address, maps & inquiry form
-├── privacy-policy.html      # Legal compliance & portal terms
-├── .agents/                 # Anti-slop quality assurance toolkit & scanners
-└── README.md
-```
+The unzipped production package contains the complete, unencumbered website:
+
+* `index.html` — Full-bleed enterprise IT services homepage with GIGABYTE INFINITY hero, category pills, and quick search.
+* `products.html` — 33-product hardware catalog with dynamic category filters, search bar, and interactive 10-slot Custom PC Studio.
+* `contact.html` — Contact portal, Google Maps embed, business credentials, and dual inquiry dispatch.
+* `privacy-policy.html` — Comprehensive privacy policy and terms of service.
+* `css/` — Complete dark/light mode stylesheets (`style.css`, `products.css`).
+* `js/` — Three.js 3D motion graphics engine, constellation particles, catalog dataset, and WhatsApp/Email dispatch engines.
+* `assets/` — 100+ optimized product images, component diagrams, high-resolution logos, and icons.
+* `README-CLIENT.txt` — Handover setup and hosting instructions.
 
 ---
 
-## 🛠️ Local Development
+## 🚀 Hosting & Deployment Guide
 
-Serve locally using any static web server:
+Once you extract `KrishnaInfotech-Production-Website.zip`:
 
-```bash
-# Python 3
-python -m http.server 8080
-
-# Node.js (npx)
-npx serve -l 8080 .
-```
-
-Then visit `http://localhost:8080` in your browser.
+1. **Local Preview**: Double-click `index.html`. It runs in any web browser without needing a backend server or database.
+2. **Web Hosting**: Upload all files inside the extracted folder to your web host's `public_html` directory (Hostinger, cPanel, GoDaddy, AWS S3, Vercel, or Netlify).
 
 ---
 
-## 📜 License & Compliance
+## 📞 Technical & Handover Support
 
-© Krishna Infotech. Proprietary business and brand assets.
-All rights reserved.
+* **Agency**: [trendustyorbit.online](https://trendustyorbit.online)
+* **Lead Engineer**: Vikrant Madane
+* **WhatsApp**: +91 9819557374
+* **Email**: vikrant2005@gmail.com
+* **Registered Location**: Mumbai • Thane • Navi Mumbai • Nashik
