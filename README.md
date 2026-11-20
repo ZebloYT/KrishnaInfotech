@@ -14,13 +14,14 @@ This repository serves as the official client handover gateway. The complete, pr
 
 1. **Visit the Gateway**: Open `index.html` (or the deployed GitHub Pages portal).
 2. **Arrange Cash Payment Handover**:
+   * **Handover Fee**: **₹1,000 (Fixed Cash Settlement)**
    * **Payment Mode**: Direct Cash in Hand / In-Person Settlement
    * **Contact / Phone**: [+91 9819557374](tel:+919819557374) (Vikrant Madane)
    * **Handover Areas**: Mumbai • Thane • Navi Mumbai • Nashik
-   * **Schedule on WhatsApp**: [+91 9819557374](https://wa.me/919819557374?text=Hi%20Vikrant,%20I%20am%20ready%20with%20the%20cash%20payment%20for%20the%20Krishna%20Infotech%20website%20package.%20Please%20let%20me%20know%20when%20and%20where%20we%20can%20meet%20for%20the%20cash%20handover.)
+   * **Schedule on WhatsApp**: [+91 9819557374](https://wa.me/919819557374?text=Hi%20Vikrant,%20I%20am%20ready%20with%20the%20cash%20payment%20of%20Rs.1000%20for%20the%20Krishna%20Infotech%20website%20package.%20Please%20let%20me%20know%20when%20and%20where%20we%20can%20meet%20for%20the%20cash%20handover.)
    * *(Optional Online/UPI: `vikrant2005@okicici` / `9819557374@upi`)*
 3. **Receive Unlock Code**:
-   * Upon receiving cash payment, Vikrant immediately issues your authorized single-use verification code (e.g. `KI-PAY-2026`) via WhatsApp / SMS.
+   * Upon receiving cash payment of ₹1,000, Vikrant immediately issues your authorized single-use verification code (e.g. `KI-PAY-2026`) via WhatsApp / SMS.
 4. **Download Archive**:
    * Enter the code on the gateway page to immediately decrypt and download `KrishnaInfotech-Production-Website.zip`.
    * *Direct 1-Click Link format*: `index.html?code=YOUR_CODE`
