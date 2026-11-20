@@ -766,9 +766,9 @@
       </button>
 
       <!-- Button 2: Generate Official GST Email Invoice (Secondary Action) -->
-      <button id="cart-email-quote-btn" class="btn-secondary" onclick="generateAndShowGmailQuotation()" style="width: 100%; justify-content: center; padding: 9px; font-size: 12.5px; margin-bottom: 8px;">
+      <button id="cart-email-quote-btn" class="btn-secondary" onclick="generateAndShowGmailQuotation()" style="width: 100%; justify-content: center; padding: 10px; font-size: 12.5px; margin-bottom: 8px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>View GST Quotation Breakdown in Gmail</span>
+        <span>Review &amp; Send Email Quotation (Gmail / Mail / PDF)</span>
       </button>
 
       <button class="btn-secondary" onclick="clearCart()" style="width: 100%; justify-content: center; padding: 6px; font-size: 11.5px; border-color: transparent;">
@@ -1027,17 +1027,23 @@
 
         <!-- Bottom Gmail Client Action Controls -->
         <div class="gmail-reply-bar">
-          <a id="gmail-open-web-link" href="#" target="_blank" class="gmail-pill-btn primary" rel="noopener">
-            Open Compose in Gmail Web
+          <a id="gmail-open-web-link" href="#" target="_blank" class="gmail-pill-btn primary" rel="noopener" title="Open formatted compose window in Gmail Web">
+            Open in Gmail Web ↗
           </a>
-          <a id="gmail-open-wa-link" href="#" target="_blank" class="gmail-pill-btn" style="color: #15803d; border-color: #15803d;" rel="noopener">
-            Share to WhatsApp (+91 9819557374)
+          <a id="gmail-open-mailto-link" href="#" class="gmail-pill-btn" rel="noopener" title="Open in Outlook, Apple Mail, or default desktop email client">
+            Open in Email App (mailto:)
           </a>
-          <button class="gmail-pill-btn" onclick="window.print()">
-            Print / Download PDF
+          <button type="button" class="gmail-pill-btn" onclick="copyQuotationEmailText()" title="Copy quotation text to clipboard">
+            📋 Copy Email Text
           </button>
-          <button class="gmail-pill-btn" onclick="closeGmailModal()" style="margin-left: auto;">
-            Done / Close
+          <a id="gmail-open-wa-link" href="#" target="_blank" class="gmail-pill-btn" style="color: #15803d; border-color: #15803d;" rel="noopener">
+            WhatsApp (+91 9819557374)
+          </a>
+          <button type="button" class="gmail-pill-btn" onclick="window.print()">
+            Print / PDF
+          </button>
+          <button type="button" class="gmail-pill-btn" onclick="closeGmailModal()" style="margin-left: auto;">
+            Close
           </button>
         </div>
 

@@ -2422,22 +2422,48 @@ const PRODUCTS_DATA = [
       document.getElementById('email-grandtotal-val').textContent = formatINR(grandTotal);
 
       // 5. Setup Action Links
-      let emailBodyText = `Official Quotation Reference: ${quoteRef}%0D%0AClient: ${name}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0ALocation: ${loc}%0D%0A%0D%0AItems Ordered:%0D%0A`;
-      shoppingCart.forEach((i, idx) => {
-        emailBodyText += `${idx + 1}. ${i.name} x${i.quantity} = ${formatINR(i.unitPrice * i.quantity)} (${i.warrantyText})%0D%0A`;
+      const itemLines = shoppingCart.map((i, idx) => {
+        let line = `${idx + 1}. ${i.name} x${i.quantity} = Rs. ${Number(i.unitPrice * i.quantity).toLocaleString('en-IN')} (${i.warrantyText})`;
         if (i.isCustomBuild && i.specs) {
-          Object.entries(i.specs).forEach(([k, v]) => {
-            emailBodyText += `   - ${k}: ${v}%0D%0A`;
-          });
+          const specEntries = Object.entries(i.specs).map(([k, v]) => `   - ${k}: ${v}`).join('\n');
+          line += '\n' + specEntries;
         }
-      });
-      emailBodyText += `%0D%0ATaxable Subtotal: ${formatINR(subtotal)}%0D%0A18% GST (CGST+SGST): ${formatINR(cgst + sgst)}%0D%0AGrand Total: ${formatINR(grandTotal)}%0D%0A%0D%0APlease confirm GST invoice & dispatch schedule.`;
+        return line;
+      }).join('\n');
 
-      const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=vikrant2005@gmail.com&su=${encodeURIComponent(`[Quotation & Order #${quoteRef}] ${name}`)}&body=${emailBodyText}`;
-      const waOrderUrl = `https://wa.me/919819557374?text=${encodeURIComponent(`Hello Vikrant, I have generated Quotation #${quoteRef}:\nClient: ${name}\nPhone: ${phone}\nLocation: ${loc}\nGrand Total: ${formatINR(grandTotal)}\nPlease confirm dispatch.`)}`;
+      const plainEmailBody = [
+        `Official Quotation Reference: ${quoteRef}`,
+        `Client: ${name}`,
+        `Phone: ${phone}`,
+        `Email: ${email}`,
+        `Delivery / Site Location: ${loc}`,
+        '',
+        'Items Ordered:',
+        itemLines,
+        '',
+        `Taxable Subtotal: Rs. ${Number(subtotal).toLocaleString('en-IN')}`,
+        `18% GST (CGST + SGST): Rs. ${Number(cgst + sgst).toLocaleString('en-IN')}`,
+        `Grand Total: Rs. ${Number(grandTotal).toLocaleString('en-IN')}`,
+        '',
+        'Please confirm GST invoice & dispatch schedule.'
+      ].join('\n');
 
-      document.getElementById('gmail-open-web-link').href = gmailComposeUrl;
-      document.getElementById('gmail-open-wa-link').href = waOrderUrl;
+      const emailSubject = `[Quotation & Order #${quoteRef}] ${name}`;
+      window.lastGeneratedQuotationText = `To: vikrant2005@gmail.com\nSubject: ${emailSubject}\n\n${plainEmailBody}`;
+
+      // 100% Valid URI-encoded URLs (prevents Google 502 Bad Gateway)
+      const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=vikrant2005@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(plainEmailBody)}`;
+      const mailtoUrl = `mailto:vikrant2005@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(plainEmailBody)}`;
+      const waOrderUrl = `https://wa.me/919819557374?text=${encodeURIComponent(`Hello Vikrant, I have generated Quotation #${quoteRef}:\nClient: ${name}\nPhone: ${phone}\nLocation: ${loc}\nGrand Total: Rs. ${Number(grandTotal).toLocaleString('en-IN')}\nPlease confirm dispatch.`)}`;
+
+      const gmailWebLink = document.getElementById('gmail-open-web-link');
+      if (gmailWebLink) gmailWebLink.href = gmailComposeUrl;
+
+      const mailtoLink = document.getElementById('gmail-open-mailto-link');
+      if (mailtoLink) mailtoLink.href = mailtoUrl;
+
+      const waLink = document.getElementById('gmail-open-wa-link');
+      if (waLink) waLink.href = waOrderUrl;
 
       // Close cart drawer & Open Gmail UI Modal
       toggleCartDrawer(false);
@@ -2445,8 +2471,41 @@ const PRODUCTS_DATA = [
       gmailModal.classList.add('open');
       document.body.style.overflow = 'hidden';
 
-      showToast(`Quotation #${quoteRef} generated! Email preview loaded.`);
+      showToast(`Quotation #${quoteRef} generated! Email options ready.`);
     };
+
+    window.copyQuotationEmailText = function() {
+      const textToCopy = window.lastGeneratedQuotationText || '';
+      if (!textToCopy) {
+        showToast('No quotation generated to copy yet.', true);
+        return;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast('Quotation email text copied to clipboard! Ready to paste.');
+        }).catch(() => {
+          fallbackCopyText(textToCopy);
+        });
+      } else {
+        fallbackCopyText(textToCopy);
+      }
+    };
+
+    function fallbackCopyText(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Quotation email text copied to clipboard! Ready to paste.');
+      } catch (err) {
+        showToast('Could not auto-copy. Please manually copy the preview.', true);
+      }
+      ta.remove();
+    }
 
     window.closeGmailModal = function() {
       const gmailModal = document.getElementById('gmail-modal');
